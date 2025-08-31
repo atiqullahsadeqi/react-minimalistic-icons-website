@@ -15,7 +15,7 @@
     "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-minimalistic-icons": "^1.1.2"
+    "react-minimalistic-icons": "^1.1.8"
   },
   "devDependencies": {
     "@babel/core": "^7.28.3",

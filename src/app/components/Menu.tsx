@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 const Menu = () => {
   const [showToast, setShowToast] = useState(false);
-  const [version, setVersion] = useState("1.1.2");
+  const [version, setVersion] = useState("1.1.8");
 
   useEffect(() => {
     // Get version from package.json dependencies
