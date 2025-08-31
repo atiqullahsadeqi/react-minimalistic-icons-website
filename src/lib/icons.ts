@@ -2,7 +2,7 @@ import * as Icons from "react-minimalistic-icons";
 
 export interface IconData {
   name: string;
-  component: React.ComponentType<any>;
+  component: React.ComponentType<{ size?: number; className?: string; color?: string }>;
   category: string;
   variant: string;
 }
