@@ -1,9 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useTheme } from "./ThemeProvider";
 
 const Menu = () => {
   const [showToast, setShowToast] = useState(false);
   const [version, setVersion] = useState("1.1.8");
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     // Get version from package.json dependencies
@@ -42,7 +44,7 @@ const Menu = () => {
   return (
     <div>
       {showToast && (
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-green-500/20 backdrop-blur-md text-green-800 px-6 py-3 rounded-lg border border-green-500/30 shadow-lg animate-bounce">
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-green-500/20 backdrop-blur-md text-green-800 dark:text-green-200 px-6 py-3 rounded-lg border border-green-500/30 shadow-lg animate-bounce">
           URL copied to clipboard!
         </div>
       )}
@@ -56,18 +58,33 @@ const Menu = () => {
                   RM
                 </span>
               </div>
-              <span className="font-semibold text-gray-900 text-sm sm:text-base">
+              <span className="font-semibold text-gray-900 dark:text-gray-100 text-sm sm:text-base">
                 React Minimalistic Icons
               </span>
             </div>
-            <span className="px-2 py-1 text-xs font-medium text-gray-600 bg-gray-100 border border-gray-200 rounded-md">
+            <span className="px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md">
               v{version}
             </span>
           </div>
-          <div className="flex justify-end">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? (
+                <svg className="w-5 h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              )}
+            </button>
             <button
               onClick={copyUrl}
-              className="text-sm font-semibold text-gray-900 hover:text-blue-600 cursor-pointer"
+              className="text-sm font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer"
             >
               Share
             </button>

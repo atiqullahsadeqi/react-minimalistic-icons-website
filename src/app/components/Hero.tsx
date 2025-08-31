@@ -4,19 +4,19 @@ const Hero = () => {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-16 lg:px-8 lg:py-16">
       <div className="hidden sm:mb-8 sm:flex sm:justify-start">
-        <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+        <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 dark:text-gray-400 ring-1 ring-gray-900/10 dark:ring-gray-100/10 hover:ring-gray-900/20 dark:hover:ring-gray-100/20 transition-colors">
           +5000 icons | MIT License | React library
         </div>
       </div>
       <div className="text-left">
-        <h1 className="text-xl font-semibold tracking-tight text-balance text-gray-900 sm:text-2xl lg:text-3xl">
+        <h1 className="text-xl font-semibold tracking-tight text-balance text-gray-900 dark:text-gray-100 sm:text-2xl lg:text-3xl">
           A comprehensive collection of minimalistic SVG icons for{" "}
           <br className="hidden sm:block" /> React and Next.js applications
         </h1>
         <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4 sm:gap-x-6">
           <a
             href="https://github.com/atiqullahsadeqi/react-minimalistic-icons"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-gray-600"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
             <svg
               className="w-4 h-4 sm:w-5 sm:h-5"
@@ -29,7 +29,7 @@ const Hero = () => {
           </a>
           <a
             href="https://www.figma.com/community/file/1253623367736500715/5000-icon-set"
-            className="inline-flex items-center gap-2 text-sm/6 font-semibold text-gray-900 hover:text-gray-600"
+            className="inline-flex items-center gap-2 text-sm/6 font-semibold text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
             <svg
               className="w-4 h-4 sm:w-5 sm:h-5"

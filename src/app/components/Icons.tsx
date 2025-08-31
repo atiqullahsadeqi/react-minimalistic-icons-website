@@ -18,9 +18,9 @@ const IconItem = memo(({ icon, onCopy, isCopied }: {
       className="flex flex-col items-center cursor-pointer group"
       onClick={() => onCopy(icon.name)}
     >
-      <div className="relative bg-white h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 xl:h-[120px] xl:w-[120px] border border-gray-200 rounded-xl flex items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-300">
-        <IconComponent size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-6 xl:h-6" />
-        <div className="absolute inset-0 bg-indigo-600 bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
+      <div className="relative bg-white dark:bg-gray-800 h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 xl:h-[120px] xl:w-[120px] border border-gray-200 dark:border-gray-700 rounded-xl flex items-center justify-center shadow-sm hover:shadow-md dark:hover:shadow-lg transition-shadow duration-300">
+        <IconComponent size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-6 xl:h-6 text-gray-700 dark:text-gray-300" />
+        <div className="absolute inset-0 bg-indigo-600 dark:bg-indigo-500 bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
           {isCopied ? (
             <span className="text-white font-semibold text-lg">✓</span>
           ) : (
@@ -28,7 +28,7 @@ const IconItem = memo(({ icon, onCopy, isCopied }: {
           )}
         </div>
       </div>
-      <p className="text-gray-400 mt-2 sm:mt-3 text-xs sm:text-xs text-center leading-tight">
+      <p className="text-gray-400 dark:text-gray-500 mt-2 sm:mt-3 text-xs sm:text-xs text-center leading-tight">
         {icon.name
           .replace(/([A-Z])/g, "-$1")
           .toLowerCase()
