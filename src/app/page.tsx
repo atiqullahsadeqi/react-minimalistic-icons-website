@@ -1,9 +1,8 @@
 "use client";
-import { useState, useMemo, useCallback, useEffect } from "react";
+import { useState, useMemo, useCallback } from "react";
 import {
   getAllIcons,
   searchIcons,
-  filterByCategory,
   filterByVariant,
   variants,
 } from "@/lib/icons";

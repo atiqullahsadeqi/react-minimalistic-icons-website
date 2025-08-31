@@ -50,7 +50,7 @@ const Icons = memo(({ icons }: IconGridProps) => {
       await navigator.clipboard.writeText(code);
       setCopiedIcon(iconName);
       setTimeout(() => setCopiedIcon(null), 2000);
-    } catch (err) {
+    } catch {
       const textArea = document.createElement("textarea");
       textArea.value = code;
       document.body.appendChild(textArea);

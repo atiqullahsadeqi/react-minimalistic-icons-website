@@ -14,9 +14,9 @@ const Menu = () => {
           const data = await response.json();
           setVersion(data.version);
         }
-      } catch (err) {
+      } catch {
         // Fallback to checking package.json in dependencies
-        setVersion("1.1.3");
+        setVersion("1.1.2");
       }
     };
     getVersion();
@@ -27,7 +27,7 @@ const Menu = () => {
       await navigator.clipboard.writeText(window.location.href);
       setShowToast(true);
       setTimeout(() => setShowToast(false), 3000);
-    } catch (err) {
+    } catch {
       const textArea = document.createElement("textarea");
       textArea.value = window.location.href;
       document.body.appendChild(textArea);
