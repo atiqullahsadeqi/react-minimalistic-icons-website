@@ -10,6 +10,7 @@ import Hero from "./components/Hero";
 import SearchBar from "./components/SearchBar";
 import Variants from "./components/Variants";
 import Icons from "./components/Icons";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const [selectedVariant, setSelectedVariant] = useState("Linear");
@@ -56,7 +57,7 @@ export default function Home() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600 dark:text-gray-400">Loading icons...</p>
+          <p className="text-muted-foreground">Loading icons...</p>
         </div>
       </div>
     );
@@ -65,7 +66,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <div className="sticky top-0 z-40 bg-white dark:bg-gray-900 mb-20 transition-colors">
+      <div className="sticky top-0 z-40 bg-background mb-20 transition-colors">
         <SearchBar
           searchQuery={searchQuery}
           onSearchChange={handleSearchChange}
@@ -90,12 +91,14 @@ export default function Home() {
         <div className="w-full flex justify-center py-8">
           <button
             onClick={loadMore}
-            className="cursor-pointer px-6 py-3 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-colors font-medium"
+            className="cursor-pointer px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium"
           >
             Load More ({filteredIcons.length - displayedIcons.length} remaining)
           </button>
         </div>
       )}
+
+      <Footer />
     </div>
   );
 }
